@@ -8,7 +8,14 @@ deploymentAnnotations:
 fullnameOverride: {{ required "Node name is required" .node.name }}
 strategy:
   type: Recreate
+
+{{- if hasKey .node.values "podAnnotations" }}
+podAnnotations:
+  {{- toYaml .node.values.podAnnotations | nindent 2 }}
+{{- else }}
 podAnnotations: {}
+{{- end }}
+
 podLabels:
   role: {{ required "Node role is required" .node.role }}
 
