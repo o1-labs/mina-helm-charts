@@ -318,7 +318,9 @@ secrets: []
       /bin/chmod -R 0777 /root/.mina-config
 
       cp /root/genesis/* /root/.mina-config/ || true;
+      {{- if .node.values.daemon.init.genesis.fromValue }}
       cp /root/genesis-inline/* /root/.mina-config/ || true;
+      {{- end }}
   volumeMounts:
   - name: wallet-keys
     mountPath: /root/wallet-keys
