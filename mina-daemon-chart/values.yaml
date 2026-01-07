@@ -43,6 +43,10 @@ podAnnotations: {}
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels: {}
 
+# This setting allows all containers in the pod to share a single process namespace.
+# It is commonly used for debugging and monitoring purposes.
+shareProcessNamespace: false
+
 # This is for setting Pod-level security context more information can be found here: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.29/#podsecuritycontext-v1-core
 podSecurityContext: {}
   # runAsUser: 1000

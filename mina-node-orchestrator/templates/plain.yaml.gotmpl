@@ -39,6 +39,10 @@ extraInitContainers:
 {{- toYaml .node.values.extraInitContainers | nindent 2 }}
 {{- end }}
 
+{{- if hasKey .node.values "shareProcessNamespace" }}
+shareProcessNamespace: {{ .node.values.shareProcessNamespace }}
+{{- end }}
+
 daemon:
   name: {{ required "Node name is required" .node.name }}
   network: {{ include "mina-standard-node.plain.network" . }}
