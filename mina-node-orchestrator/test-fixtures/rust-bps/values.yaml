@@ -40,6 +40,9 @@ nodes:
           MINA_PRIVKEY_PASS: "test-password"
         init:
           enable: true
+          image:
+            repository: vladsimplestakingcom/mina-bp-stats-sidecar
+            tag: 1.9.0-init-override-test
           producerKey:
             generate: true
             password: "test-password"

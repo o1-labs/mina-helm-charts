@@ -30,6 +30,7 @@ values: # Default environment values, used in templates only
     replicas: ""
     init: # required if .enable: true
       enable: false
+      image: {} # optional. Override init container image (default: daemon image)
     # network: global-override # optional. Overrides global.network
     persistence: # optional. Persistent volume configuration
       enable: false

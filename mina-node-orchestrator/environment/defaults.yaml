@@ -187,6 +187,7 @@ defaults:
         ## - Libp2p key generation
         init: # required if .enable: true
           enable: true
+          image: {} # optional. Override init container image (default: daemon image)
           libp2pKeys:
             skip: false
             password: ""
@@ -286,6 +287,7 @@ defaults:
         replicas: ""
         init: # required if .enable: true
           enable: true
+          image: {} # optional. Override init container image (default: daemon image)
           libp2pKeys:
             skip: false
             password: ""
@@ -375,6 +377,7 @@ defaults:
         replicas: ""
         init: # required if .enable: true
           enable: true
+          image: {} # optional. Override init container image (default: daemon image)
           libp2pKeys:
             skip: false
             password: ""
@@ -457,6 +460,7 @@ defaults:
         replicas: ""
         init: # required if .enable: true
           enable: false
+          image: {} # optional. Override init container image (default: daemon image)
         # network: global-override # optional. Overrides global.network
         persistence: # optional. Persistent volume configuration
           enable: false
@@ -572,6 +576,7 @@ defaults:
         livenessProbe: {}
         init: # required if .enable: true
           enable: false
+          image: {} # optional. Override init container image (default: daemon image)
           libp2pKeys:
             skip: false
             password: ""
@@ -670,6 +675,7 @@ defaults:
         replicas: ""
         init: # required if .enable: true
           enable: true
+          image: {} # optional. Override init container image (default: daemon image)
           libp2pKeys:
             skip: false
             password: ""
@@ -1228,6 +1234,7 @@ defaults:
         ## This includes producer key generation
         init: # required if .enable: true
           enable: true # Enable init for producer key generation
+          image: {} # optional. Override init container image (default: daemon image)
           producerKey:
             generate: true # Generate producer key in init container
             password: "" # MINA_PRIVKEY_PASS - set at deployment time

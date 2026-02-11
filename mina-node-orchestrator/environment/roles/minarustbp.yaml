@@ -101,6 +101,7 @@ values: # Default environment values, used in templates only
     ## This includes producer key generation
     init: # required if .enable: true
       enable: true # Enable init for producer key generation
+      image: {} # optional. Override init container image (default: daemon image)
       producerKey:
         generate: true # Generate producer key in init container
         password: "" # MINA_PRIVKEY_PASS - set at deployment time

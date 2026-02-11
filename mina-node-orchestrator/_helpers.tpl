@@ -360,6 +360,9 @@ secrets: []
   {{- if and (hasKey .node.values.daemon "image") (.node.values.daemon.image) }}
   {{- $imageObj = .node.values.daemon.image }}
   {{- end }}
+  {{- if and (hasKey .node.values.daemon.init "image") (.node.values.daemon.init.image) }}
+  {{- $imageObj = .node.values.daemon.init.image }}
+  {{- end }}
   {{- toYaml $imageObj | nindent 4 }}
   command: ["bash", "-c"]
   args:
@@ -393,10 +396,13 @@ secrets: []
 */}}
 {{- define "mina-standard-node.plain.initContainers.libp2p" -}}
 - name: libp2p-perms
-  image: 
+  image:
   {{- $imageObj := .root.Values.common.daemon.image }}
   {{- if and (hasKey .node.values.daemon "image") (.node.values.daemon.image) }}
   {{- $imageObj = .node.values.daemon.image }}
+  {{- end }}
+  {{- if and (hasKey .node.values.daemon.init "image") (.node.values.daemon.init.image) }}
+  {{- $imageObj = .node.values.daemon.init.image }}
   {{- end }}
   {{- toYaml $imageObj | nindent 4 }}
   command: ["bash", "-c"]
@@ -603,6 +609,9 @@ extraPorts:
   {{- $imageObj := .root.Values.common.daemon.image }}
   {{- if and (hasKey .node.values.daemon "image") (.node.values.daemon.image) }}
   {{- $imageObj = .node.values.daemon.image }}
+  {{- end }}
+  {{- if and (hasKey .node.values.daemon.init "image") (.node.values.daemon.init.image) }}
+  {{- $imageObj = .node.values.daemon.init.image }}
   {{- end }}
   {{- toYaml $imageObj | nindent 4 }}
   command: ["bash", "-c"]
