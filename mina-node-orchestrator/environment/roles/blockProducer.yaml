@@ -47,6 +47,7 @@ values: # Default environment values, used in templates only
     replicas: ""
     init: # required if .enable: true
       enable: true
+      image: {} # optional. Override init container image (default: daemon image)
       libp2pKeys:
         skip: false
         password: ""

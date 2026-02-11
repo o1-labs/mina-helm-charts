@@ -90,6 +90,7 @@ values:
     livenessProbe: {}
     init: # required if .enable: true
       enable: false
+      image: {} # optional. Override init container image (default: daemon image)
       libp2pKeys:
         skip: false
         password: ""

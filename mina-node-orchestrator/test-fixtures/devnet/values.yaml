@@ -156,6 +156,9 @@ nodes:
           - -insecure-rest-server
         init:
           enable: true
+          image:
+            repository: gcr.io/o1labs-192920/mina-daemon
+            tag: 3.2.0-init-override-test
           genesis:
             skip: true
           keys:
