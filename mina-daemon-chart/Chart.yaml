@@ -25,9 +25,9 @@ appVersion: "0.0.1"
 
 # List of maintainers for this chart
 maintainers:
-  - name: "SanabriaRusso"
+  - name: "o1-labs"
     email: "luis@o1labs.org"
-    url: "https://github.com/SanabriaRusso"
+    url: "https://github.com/o1-labs"
 
 dependencies:
   - name: postgresql
