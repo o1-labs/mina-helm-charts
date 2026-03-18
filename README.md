@@ -198,10 +198,13 @@ All configuration APIs remain backwards compatible.
 
 ## Contributing
 
-1. Fork the repository
-2. Make your changes following the existing patterns
-3. Test with `helm lint` and `helm template`
-4. Submit a pull request
+1. Open an issue describing the bug or feature
+2. Create a branch from `main` (e.g. `fix/issue-42` or `feat/my-feature`)
+3. Make your changes following the existing patterns
+4. Test with `helm lint` and `helm template`
+5. Submit a pull request referencing the issue
+
+External contributors may also fork the repository and follow the same workflow.
 
 ## Support
 
